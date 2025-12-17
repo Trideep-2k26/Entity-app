@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, DateTime, Boolean, Date, Text
+from sqlalchemy import Column, String, DateTime, Boolean, Date, Text, Index
 from sqlalchemy.sql import func
 from app.database import Base
 import uuid
@@ -29,6 +29,13 @@ class User(Base):
     email_verified = Column(Boolean, default=False, nullable=False)
     mobile_verified = Column(Boolean, default=False, nullable=False)
     last_login_at = Column(DateTime(timezone=True), nullable=True)
+    
+    __table_args__ = (
+        Index('idx_active_email', 'is_deleted', 'email'),
+        Index('idx_active_mobile', 'is_deleted', 'primary_mobile'),
+        Index('idx_active_aadhaar', 'is_deleted', 'aadhaar'),
+        Index('idx_active_pan', 'is_deleted', 'pan'),
+    )
     
     def __repr__(self):
         return f"<User(id={self.id}, name={self.name}, email={self.email})>"
