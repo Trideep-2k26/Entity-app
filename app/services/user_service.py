@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session
-from sqlalchemy import and_
+from sqlalchemy import and_, or_
+from sqlalchemy.exc import IntegrityError
 from app.models.user import User
 from app.schemas.user import UserCreate, UserUpdate
 from fastapi import HTTPException, status
@@ -11,40 +12,82 @@ class UserService:
     @staticmethod
     def create_user(db: Session, user_data: UserCreate) -> User:
         """Create a new user with validation"""
-        # Check for duplicate email
-        if db.query(User).filter(and_(User.email == user_data.email, User.is_deleted == False)).first():
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Email already registered"
-            )
+        # Check for duplicate email (active users only)
+        existing_email = db.query(User).filter(User.email == user_data.email).first()
+        if existing_email:
+            if not existing_email.is_deleted:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail="Email already registered"
+                )
+            else:
+                # Soft-deleted user exists - restore and update
+                existing_email.is_deleted = False
+                existing_email.deleted_at = None
+                existing_email.deleted_by = None
+                existing_email.is_active = True
+                existing_email.name = user_data.name
+                existing_email.primary_mobile = user_data.primary_mobile
+                existing_email.secondary_mobile = user_data.secondary_mobile
+                existing_email.aadhaar = user_data.aadhaar
+                existing_email.pan = user_data.pan
+                existing_email.date_of_birth = user_data.date_of_birth
+                existing_email.place_of_birth = user_data.place_of_birth
+                existing_email.current_address = user_data.current_address
+                existing_email.permanent_address = user_data.permanent_address
+                existing_email.version = str(uuid.uuid4())
+                db.commit()
+                db.refresh(existing_email)
+                return existing_email
         
-        # Check for duplicate mobile
-        if db.query(User).filter(and_(User.primary_mobile == user_data.primary_mobile, User.is_deleted == False)).first():
+        # Check for duplicate mobile (active users only)
+        existing_mobile = db.query(User).filter(User.primary_mobile == user_data.primary_mobile).first()
+        if existing_mobile and not existing_mobile.is_deleted:
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="Mobile number already registered"
             )
         
-        # Check for duplicate Aadhaar
-        if db.query(User).filter(and_(User.aadhaar == user_data.aadhaar, User.is_deleted == False)).first():
+        # Check for duplicate Aadhaar (active users only)
+        existing_aadhaar = db.query(User).filter(User.aadhaar == user_data.aadhaar).first()
+        if existing_aadhaar and not existing_aadhaar.is_deleted:
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="Aadhaar already registered"
             )
         
-        # Check for duplicate PAN
-        if db.query(User).filter(and_(User.pan == user_data.pan, User.is_deleted == False)).first():
+        # Check for duplicate PAN (active users only)
+        existing_pan = db.query(User).filter(User.pan == user_data.pan).first()
+        if existing_pan and not existing_pan.is_deleted:
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="PAN already registered"
             )
         
-        # Create user
-        db_user = User(**user_data.model_dump())
-        db.add(db_user)
-        db.commit()
-        db.refresh(db_user)
-        return db_user
+        try:
+            # Create user
+            db_user = User(**user_data.model_dump())
+            db.add(db_user)
+            db.commit()
+            db.refresh(db_user)
+            return db_user
+        except IntegrityError as e:
+            db.rollback()
+            error_msg = str(e.orig)
+            if 'email' in error_msg:
+                detail = "Email already exists in database (may be soft-deleted)"
+            elif 'primary_mobile' in error_msg:
+                detail = "Mobile number already exists in database (may be soft-deleted)"
+            elif 'aadhaar' in error_msg:
+                detail = "Aadhaar already exists in database (may be soft-deleted)"
+            elif 'pan' in error_msg:
+                detail = "PAN already exists in database (may be soft-deleted)"
+            else:
+                detail = "Duplicate entry found"
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=detail
+            )
     
     @staticmethod
     def get_user_by_id(db: Session, user_id: str) -> Optional[User]:
