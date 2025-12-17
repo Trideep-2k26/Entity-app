@@ -50,6 +50,15 @@ class UserService:
         hashed_id = UserService._hash_pii(user_data.email)
         logger.info(f"Creating user with identifier: {hashed_id}")
         
+        if user_data.idempotency_key:
+            existing = db.query(User).filter(
+                User.version == user_data.idempotency_key,
+                User.is_deleted == False
+            ).first()
+            if existing:
+                logger.info(f"Duplicate request detected via idempotency key, returning existing user: {existing.id}")
+                return existing
+        
         existing_email = db.query(User).filter(User.email == user_data.email).first()
         if existing_email and existing_email.is_deleted:
             logger.info(f"Restoring soft-deleted user with identifier: {hashed_id}")
@@ -165,3 +174,30 @@ class UserService:
         db.refresh(db_user)
         logger.info(f"User soft deleted successfully: {user_id}")
         return db_user
+    
+    @staticmethod
+    def search_users(db: Session, query: str, page: int = 1, page_size: int = 10):
+        logger.debug(f"Searching users with query: {query}")
+        search_pattern = f"%{query}%"
+        base_query = db.query(User).filter(
+            User.is_deleted == False,
+            (User.name.like(search_pattern) | User.email.like(search_pattern))
+        )
+        
+        offset = (page - 1) * page_size
+        total = base_query.count()
+        users = base_query.order_by(User.created_at.desc())\
+            .offset(offset)\
+            .limit(page_size)\
+            .all()
+        
+        total_pages = (total + page_size - 1) // page_size
+        logger.info(f"Search found {total} users matching query")
+        
+        return {
+            "total": total,
+            "page": page,
+            "page_size": page_size,
+            "total_pages": total_pages,
+            "data": users
+        }

@@ -40,7 +40,7 @@ class UserBase(BaseModel):
 
 class UserCreate(UserBase):
     """Schema for creating a user"""
-    pass
+    idempotency_key: Optional[str] = Field(None, description="Client-generated unique key to prevent duplicate submissions")
 
 class UserUpdate(BaseModel):
     """Schema for updating a user - all fields optional"""

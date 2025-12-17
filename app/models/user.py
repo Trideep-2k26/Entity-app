@@ -35,6 +35,8 @@ class User(Base):
         Index('idx_active_mobile', 'is_deleted', 'primary_mobile'),
         Index('idx_active_aadhaar', 'is_deleted', 'aadhaar'),
         Index('idx_active_pan', 'is_deleted', 'pan'),
+        Index('idx_name_search', 'name'),
+        Index('idx_created_at', 'created_at'),
     )
     
     def __repr__(self):

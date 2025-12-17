@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, Query, status
+from fastapi import APIRouter, Depends, Query, status, Request
 from sqlalchemy.orm import Session
 from app.database import get_db
 from app.schemas.user import UserCreate, UserUpdate, UserResponse, PaginatedUserResponse
@@ -9,13 +9,15 @@ router = APIRouter(prefix="/users", tags=["users"])
 settings = get_settings()
 
 @router.post("/", response_model=UserResponse, status_code=status.HTTP_201_CREATED)
-def create_user(user: UserCreate, db: Session = Depends(get_db)):
+def create_user(request: Request, user: UserCreate, db: Session = Depends(get_db)):
     """
     Create a new user with all validations.
     
     - Validates email, mobile, Aadhaar, PAN formats
     - Ensures age >= 18 years
     - Prevents duplicate registrations
+    - Rate limited: 100 requests per minute per IP (global default)
+    - Supports idempotency_key to prevent duplicate submissions
     """
     return UserService.create_user(db, user)
 
@@ -59,3 +61,21 @@ def delete_user(user_id: str, db: Session = Depends(get_db)):
     - Allows data recovery and audit trail
     """
     return UserService.soft_delete_user(db, user_id)
+
+@router.get("/search/", response_model=PaginatedUserResponse)
+def search_users(
+    request: Request,
+    q: str = Query(..., min_length=2, description="Search query for name or email"),
+    page: int = Query(1, ge=1, description="Page number"),
+    page_size: int = Query(settings.DEFAULT_PAGE_SIZE, ge=1, le=settings.MAX_PAGE_SIZE, description="Items per page"),
+    db: Session = Depends(get_db)
+):
+    """
+    Search users by name or email.
+    
+    - Minimum 2 characters required
+    - Searches in name and email fields
+    - Returns paginated results
+    - Rate limited: 100 requests per minute per IP (global default)
+    """
+    return UserService.search_users(db, q, page, page_size)
