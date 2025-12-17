@@ -6,7 +6,6 @@ import uuid
 class User(Base):
     __tablename__ = "users"
     
-    # Primary Key - Using UUID for better security and distribution
     id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     
     # Personal Information
@@ -30,8 +29,8 @@ class User(Base):
     # Audit Fields - Best Practice for tracking
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), onupdate=func.now(), server_default=func.now())
-    created_by = Column(String(36), nullable=True)  # User ID who created
-    updated_by = Column(String(36), nullable=True)  # User ID who last updated
+    created_by = Column(String(36), nullable=True)  
+    updated_by = Column(String(36), nullable=True) 
     
     # Soft Delete - Best Practice instead of hard delete
     is_deleted = Column(Boolean, default=False, nullable=False, index=True)

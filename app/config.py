@@ -2,16 +2,12 @@ from pydantic_settings import BaseSettings
 from functools import lru_cache
 
 class Settings(BaseSettings):
-    # Database
     DATABASE_URL: str
-    
-    # Application
     APP_NAME: str = "User Management System"
     APP_VERSION: str = "1.0.0"
     DEBUG: bool = False
     API_V1_PREFIX: str = "/api/v1"
     
-    # Pagination
     DEFAULT_PAGE_SIZE: int = 10
     MAX_PAGE_SIZE: int = 100
     

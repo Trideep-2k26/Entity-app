@@ -5,20 +5,18 @@ from app.config import get_settings
 
 settings = get_settings()
 
-# Create engine with connection pooling
 engine = create_engine(
     settings.DATABASE_URL,
-    pool_pre_ping=True,  # Verify connections before using
-    pool_size=10,        # Connection pool size
-    max_overflow=20,     # Extra connections beyond pool_size
-    pool_recycle=3600,   # Recycle connections after 1 hour
-    echo=settings.DEBUG  # Log SQL queries in debug mode
+    pool_pre_ping=True,  
+    pool_size=10,       
+    max_overflow=20,   
+    pool_recycle=3600,  
+    echo=settings.DEBUG  
 )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
-# Dependency for getting DB session
 def get_db():
     db = SessionLocal()
     try:
