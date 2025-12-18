@@ -78,7 +78,9 @@ class UserService:
         UserService._check_unique_fields(db, user_data)
         
         try:
-            db_user = User(**user_data.model_dump())
+            # Exclude idempotency_key from model_dump as it's not a database column
+            user_dict = user_data.model_dump(exclude={'idempotency_key'})
+            db_user = User(**user_dict)
             db.add(db_user)
             db.commit()
             db.refresh(db_user)

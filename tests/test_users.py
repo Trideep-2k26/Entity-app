@@ -98,7 +98,7 @@ def test_get_all_users_pagination(client, sample_user_data):
         user_data["email"] = f"user{i}@example.com"
         user_data["primary_mobile"] = f"987654{i:04d}"
         user_data["aadhaar"] = f"12345678{i:04d}"
-        user_data["pan"] = f"ABCDE123{i % 10}F"
+        user_data["pan"] = f"ABCDE{1230+i:04d}F"  # Generate unique PANs: ABCDE1230F to ABCDE1244F
         client.post("/api/v1/users/", json=user_data)
     
     # Test first page

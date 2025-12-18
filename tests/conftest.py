@@ -5,8 +5,8 @@ from sqlalchemy.orm import sessionmaker
 from app.main import app
 from app.database import Base, get_db
 
-# Test database
-SQLALCHEMY_TEST_DATABASE_URL = "mysql+pymysql://test:test@localhost:3306/test_user_management"
+# Test database - use same credentials as main database
+SQLALCHEMY_TEST_DATABASE_URL = "mysql+pymysql://root:Trideep%402003@localhost:3306/test_user_management"
 
 engine = create_engine(SQLALCHEMY_TEST_DATABASE_URL)
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -41,7 +41,7 @@ def sample_user_data():
         "primary_mobile": "9876543210",
         "secondary_mobile": "8765432109",
         "aadhaar": "123456789012",
-        "pan": "ABCDE1234F",
+        "pan": "ABKDE1234F",
         "date_of_birth": "1990-01-01",
         "place_of_birth": "Mumbai",
         "current_address": "123 Main St, Mumbai, Maharashtra, India",
