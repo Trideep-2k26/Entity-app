@@ -347,3 +347,223 @@ WHERE users.is_deleted = false ORDER BY users.created_at DESC
 2025-12-17 22:36:32,650 - sqlalchemy.engine.Engine - INFO - [cached since 25.15s ago] {'param_1': 0, 'param_2': 10}
 2025-12-17 22:36:32,661 - app.services.user_service - INFO - Fetched 2 users (total: 2)
 2025-12-17 22:36:32,671 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-12-17 22:40:51,720 - sqlalchemy.engine.Engine - INFO - SELECT DATABASE()
+2025-12-17 22:40:51,720 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-12-17 22:40:51,720 - sqlalchemy.engine.Engine - INFO - SELECT @@sql_mode
+2025-12-17 22:40:51,731 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-12-17 22:40:51,734 - sqlalchemy.engine.Engine - INFO - SELECT @@lower_case_table_names
+2025-12-17 22:40:51,736 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-12-17 22:40:51,739 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-17 22:40:51,740 - sqlalchemy.engine.Engine - INFO - DESCRIBE `user_management`.`users`
+2025-12-17 22:40:51,747 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-12-17 22:40:51,794 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-12-17 22:40:51,796 - app.main - INFO - Database tables created successfully
+2025-12-17 22:40:51,834 - app.main - INFO - Application started with rate limiting enabled
+2025-12-18 10:14:01,588 - sqlalchemy.engine.Engine - INFO - SELECT DATABASE()
+2025-12-18 10:14:01,588 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-12-18 10:14:01,588 - sqlalchemy.engine.Engine - INFO - SELECT @@sql_mode
+2025-12-18 10:14:01,588 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-12-18 10:14:01,598 - sqlalchemy.engine.Engine - INFO - SELECT @@lower_case_table_names
+2025-12-18 10:14:01,599 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-12-18 10:14:01,601 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-18 10:14:01,602 - sqlalchemy.engine.Engine - INFO - DESCRIBE `user_management`.`users`
+2025-12-18 10:14:01,603 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-12-18 10:14:01,675 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-12-18 10:14:01,678 - app.main - INFO - Database tables created successfully
+2025-12-18 10:14:01,703 - app.main - INFO - Application started with rate limiting enabled
+2025-12-18 10:16:32,769 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-18 10:16:32,796 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.is_deleted = false) AS anon_1
+2025-12-18 10:16:32,798 - sqlalchemy.engine.Engine - INFO - [generated in 0.00308s] {}
+2025-12-18 10:16:32,901 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.is_deleted = false ORDER BY users.created_at DESC 
+ LIMIT %(param_1)s, %(param_2)s
+2025-12-18 10:16:32,902 - sqlalchemy.engine.Engine - INFO - [generated in 0.00226s] {'param_1': 0, 'param_2': 10}
+2025-12-18 10:16:32,910 - app.services.user_service - INFO - Fetched 2 users (total: 2)
+2025-12-18 10:16:32,918 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-12-18 10:21:56,532 - sqlalchemy.engine.Engine - INFO - SELECT DATABASE()
+2025-12-18 10:21:56,532 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-12-18 10:21:56,537 - sqlalchemy.engine.Engine - INFO - SELECT @@sql_mode
+2025-12-18 10:21:56,537 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-12-18 10:21:56,537 - sqlalchemy.engine.Engine - INFO - SELECT @@lower_case_table_names
+2025-12-18 10:21:56,537 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-12-18 10:21:56,541 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-18 10:21:56,542 - sqlalchemy.engine.Engine - INFO - DESCRIBE `user_management`.`users`
+2025-12-18 10:21:56,542 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-12-18 10:21:56,553 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-12-18 10:21:56,563 - app.main - INFO - Database tables created successfully
+2025-12-18 10:21:56,585 - app.main - INFO - Application started with rate limiting enabled
+2025-12-18 10:22:29,970 - app.services.user_service - INFO - Creating user with identifier: 85cdb0b844f81d98
+2025-12-18 10:22:29,977 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-18 10:22:29,987 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+2025-12-18 10:22:29,990 - sqlalchemy.engine.Engine - INFO - [generated in 0.00204s] {'email_1': 'amit.patel@example.com', 'param_1': 1}
+2025-12-18 10:22:29,994 - app.services.user_service - INFO - Restoring soft-deleted user with identifier: 85cdb0b844f81d98
+2025-12-18 10:22:30,004 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.email = %(email_1)s AND users.is_deleted = false AND users.id != %(id_1)s 
+ LIMIT %(param_1)s
+2025-12-18 10:22:30,005 - sqlalchemy.engine.Engine - INFO - [generated in 0.00289s] {'email_1': 'amit.patel@example.com', 'id_1': '85f386b8-c940-4c21-a281-82dcf3670d3f', 'param_1': 1}
+2025-12-18 10:22:30,013 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.primary_mobile = %(primary_mobile_1)s AND users.is_deleted = false AND users.id != %(id_1)s 
+ LIMIT %(param_1)s
+2025-12-18 10:22:30,015 - sqlalchemy.engine.Engine - INFO - [generated in 0.00369s] {'primary_mobile_1': '9876543210', 'id_1': '85f386b8-c940-4c21-a281-82dcf3670d3f', 'param_1': 1}
+2025-12-18 10:22:30,024 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-12-18 10:22:55,514 - app.services.user_service - INFO - Creating user with identifier: 85cdb0b844f81d98
+2025-12-18 10:22:55,516 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-18 10:22:55,516 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s
+2025-12-18 10:22:55,517 - sqlalchemy.engine.Engine - INFO - [cached since 25.53s ago] {'email_1': 'amit.patel@example.com', 'param_1': 1}
+2025-12-18 10:22:55,519 - app.services.user_service - INFO - Restoring soft-deleted user with identifier: 85cdb0b844f81d98
+2025-12-18 10:22:55,520 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.email = %(email_1)s AND users.is_deleted = false AND users.id != %(id_1)s 
+ LIMIT %(param_1)s
+2025-12-18 10:22:55,521 - sqlalchemy.engine.Engine - INFO - [cached since 25.52s ago] {'email_1': 'amit.patel@example.com', 'id_1': '85f386b8-c940-4c21-a281-82dcf3670d3f', 'param_1': 1}
+2025-12-18 10:22:55,528 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.primary_mobile = %(primary_mobile_1)s AND users.is_deleted = false AND users.id != %(id_1)s 
+ LIMIT %(param_1)s
+2025-12-18 10:22:55,530 - sqlalchemy.engine.Engine - INFO - [cached since 25.52s ago] {'primary_mobile_1': '9874543210', 'id_1': '85f386b8-c940-4c21-a281-82dcf3670d3f', 'param_1': 1}
+2025-12-18 10:22:55,537 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.aadhaar = %(aadhaar_1)s AND users.is_deleted = false AND users.id != %(id_1)s 
+ LIMIT %(param_1)s
+2025-12-18 10:22:55,539 - sqlalchemy.engine.Engine - INFO - [generated in 0.00157s] {'aadhaar_1': '123456789044', 'id_1': '85f386b8-c940-4c21-a281-82dcf3670d3f', 'param_1': 1}
+2025-12-18 10:22:55,548 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.pan = %(pan_1)s AND users.is_deleted = false AND users.id != %(id_1)s 
+ LIMIT %(param_1)s
+2025-12-18 10:22:55,548 - sqlalchemy.engine.Engine - INFO - [generated in 0.00112s] {'pan_1': 'ABCDE5634F', 'id_1': '85f386b8-c940-4c21-a281-82dcf3670d3f', 'param_1': 1}
+2025-12-18 10:22:55,555 - sqlalchemy.engine.Engine - INFO - UPDATE users SET primary_mobile=%(primary_mobile)s, secondary_mobile=%(secondary_mobile)s, aadhaar=%(aadhaar)s, pan=%(pan)s, updated_at=now(), is_deleted=%(is_deleted)s, deleted_at=%(deleted_at)s, version=%(version)s, is_active=%(is_active)s WHERE users.id = %(users_id)s
+2025-12-18 10:22:55,557 - sqlalchemy.engine.Engine - INFO - [generated in 0.00095s] {'primary_mobile': '9874543210', 'secondary_mobile': '8755432109', 'aadhaar': '123456789044', 'pan': 'ABCDE5634F', 'is_deleted': 0, 'deleted_at': None, 'version': 'c6b41b50-01ef-46ee-8d35-b6daddeb7fc8', 'is_active': 1, 'users_id': '85f386b8-c940-4c21-a281-82dcf3670d3f'}
+2025-12-18 10:22:55,595 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-12-18 10:22:55,610 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-18 10:22:55,613 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.name, users.email, users.primary_mobile, users.secondary_mobile, users.aadhaar, users.pan, users.date_of_birth, users.place_of_birth, users.current_address, users.permanent_address, users.created_at, users.updated_at, users.created_by, users.updated_by, users.is_deleted, users.deleted_at, users.deleted_by, users.version, users.is_active, users.email_verified, users.mobile_verified, users.last_login_at 
+FROM users 
+WHERE users.id = %(pk_1)s
+2025-12-18 10:22:55,615 - sqlalchemy.engine.Engine - INFO - [generated in 0.00086s] {'pk_1': '85f386b8-c940-4c21-a281-82dcf3670d3f'}
+2025-12-18 10:22:55,617 - app.services.user_service - INFO - User restored successfully: 85f386b8-c940-4c21-a281-82dcf3670d3f
+2025-12-18 10:22:55,624 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-12-18 10:23:19,614 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-18 10:23:19,627 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.is_deleted = false) AS anon_1
+2025-12-18 10:23:19,628 - sqlalchemy.engine.Engine - INFO - [generated in 0.00081s] {}
+2025-12-18 10:23:19,636 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.is_deleted = false ORDER BY users.created_at DESC 
+ LIMIT %(param_1)s, %(param_2)s
+2025-12-18 10:23:19,637 - sqlalchemy.engine.Engine - INFO - [generated in 0.00104s] {'param_1': 10, 'param_2': 10}
+2025-12-18 10:23:19,640 - app.services.user_service - INFO - Fetched 0 users (total: 3)
+2025-12-18 10:23:19,645 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-12-18 10:23:28,154 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-18 10:23:28,155 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.is_deleted = false) AS anon_1
+2025-12-18 10:23:28,157 - sqlalchemy.engine.Engine - INFO - [cached since 8.53s ago] {}
+2025-12-18 10:23:28,167 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.is_deleted = false ORDER BY users.created_at DESC 
+ LIMIT %(param_1)s, %(param_2)s
+2025-12-18 10:23:28,169 - sqlalchemy.engine.Engine - INFO - [cached since 8.533s ago] {'param_1': 0, 'param_2': 10}
+2025-12-18 10:23:28,171 - app.services.user_service - INFO - Fetched 3 users (total: 3)
+2025-12-18 10:23:28,176 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-12-18 10:23:57,747 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-18 10:23:57,749 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.id = %(id_1)s AND users.is_deleted = false 
+ LIMIT %(param_1)s
+2025-12-18 10:23:57,751 - sqlalchemy.engine.Engine - INFO - [generated in 0.00152s] {'id_1': '85f386b8-c940-4c21-a281-82dcf3670d3f', 'param_1': 1}
+2025-12-18 10:23:57,758 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-12-18 10:24:53,671 - app.services.user_service - INFO - Soft deleting user: 85f386b8-c940-4c21-a281-82dcf3670d3f
+2025-12-18 10:24:53,674 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-18 10:24:53,674 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.id = %(id_1)s AND users.is_deleted = false 
+ LIMIT %(param_1)s
+2025-12-18 10:24:53,675 - sqlalchemy.engine.Engine - INFO - [cached since 55.93s ago] {'id_1': '85f386b8-c940-4c21-a281-82dcf3670d3f', 'param_1': 1}
+2025-12-18 10:24:53,684 - sqlalchemy.engine.Engine - INFO - UPDATE users SET updated_at=now(), is_deleted=%(is_deleted)s, deleted_at=%(deleted_at)s, is_active=%(is_active)s WHERE users.id = %(users_id)s
+2025-12-18 10:24:53,685 - sqlalchemy.engine.Engine - INFO - [generated in 0.00117s] {'is_deleted': 1, 'deleted_at': datetime.datetime(2025, 12, 18, 4, 54, 53, 676665), 'is_active': 0, 'users_id': '85f386b8-c940-4c21-a281-82dcf3670d3f'}
+2025-12-18 10:24:53,697 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-12-18 10:24:53,704 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-18 10:24:53,705 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.name, users.email, users.primary_mobile, users.secondary_mobile, users.aadhaar, users.pan, users.date_of_birth, users.place_of_birth, users.current_address, users.permanent_address, users.created_at, users.updated_at, users.created_by, users.updated_by, users.is_deleted, users.deleted_at, users.deleted_by, users.version, users.is_active, users.email_verified, users.mobile_verified, users.last_login_at 
+FROM users 
+WHERE users.id = %(pk_1)s
+2025-12-18 10:24:53,705 - sqlalchemy.engine.Engine - INFO - [cached since 118.1s ago] {'pk_1': '85f386b8-c940-4c21-a281-82dcf3670d3f'}
+2025-12-18 10:24:53,709 - app.services.user_service - INFO - User soft deleted successfully: 85f386b8-c940-4c21-a281-82dcf3670d3f
+2025-12-18 10:24:53,711 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-12-18 10:25:19,061 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-18 10:25:19,070 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.is_deleted = false AND (users.name LIKE %(name_1)s OR users.email LIKE %(email_1)s)) AS anon_1
+2025-12-18 10:25:19,071 - sqlalchemy.engine.Engine - INFO - [generated in 0.00090s] {'name_1': '%Amit Patel%', 'email_1': '%Amit Patel%'}
+2025-12-18 10:25:19,078 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.is_deleted = false AND (users.name LIKE %(name_1)s OR users.email LIKE %(email_1)s) ORDER BY users.created_at DESC 
+ LIMIT %(param_1)s, %(param_2)s
+2025-12-18 10:25:19,079 - sqlalchemy.engine.Engine - INFO - [generated in 0.00107s] {'name_1': '%Amit Patel%', 'email_1': '%Amit Patel%', 'param_1': 0, 'param_2': 10}
+2025-12-18 10:25:19,082 - app.services.user_service - INFO - Search found 0 users matching query
+2025-12-18 10:25:19,088 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-12-18 10:25:32,558 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-18 10:25:32,559 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.is_deleted = false AND (users.name LIKE %(name_1)s OR users.email LIKE %(email_1)s)) AS anon_1
+2025-12-18 10:25:32,559 - sqlalchemy.engine.Engine - INFO - [cached since 13.49s ago] {'name_1': '%Priya Sharma%', 'email_1': '%Priya Sharma%'}
+2025-12-18 10:25:32,561 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.is_deleted = false AND (users.name LIKE %(name_1)s OR users.email LIKE %(email_1)s) ORDER BY users.created_at DESC 
+ LIMIT %(param_1)s, %(param_2)s
+2025-12-18 10:25:32,562 - sqlalchemy.engine.Engine - INFO - [cached since 13.48s ago] {'name_1': '%Priya Sharma%', 'email_1': '%Priya Sharma%', 'param_1': 0, 'param_2': 10}
+2025-12-18 10:25:32,565 - app.services.user_service - INFO - Search found 1 users matching query
+2025-12-18 10:25:32,573 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-12-18 10:25:49,857 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-18 10:25:49,864 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.is_deleted = false AND (users.name LIKE %(name_1)s OR users.email LIKE %(email_1)s)) AS anon_1
+2025-12-18 10:25:49,865 - sqlalchemy.engine.Engine - INFO - [cached since 30.8s ago] {'name_1': '%Priya%', 'email_1': '%Priya%'}
+2025-12-18 10:25:49,873 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.is_deleted = false AND (users.name LIKE %(name_1)s OR users.email LIKE %(email_1)s) ORDER BY users.created_at DESC 
+ LIMIT %(param_1)s, %(param_2)s
+2025-12-18 10:25:49,883 - sqlalchemy.engine.Engine - INFO - [cached since 30.8s ago] {'name_1': '%Priya%', 'email_1': '%Priya%', 'param_1': 0, 'param_2': 10}
+2025-12-18 10:25:49,889 - app.services.user_service - INFO - Search found 1 users matching query
+2025-12-18 10:25:49,890 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-12-18 10:26:12,766 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-18 10:26:12,771 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.is_deleted = false) AS anon_1
+2025-12-18 10:26:12,771 - sqlalchemy.engine.Engine - INFO - [cached since 173.1s ago] {}
+2025-12-18 10:26:12,781 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.primary_mobile AS users_primary_mobile, users.secondary_mobile AS users_secondary_mobile, users.aadhaar AS users_aadhaar, users.pan AS users_pan, users.date_of_birth AS users_date_of_birth, users.place_of_birth AS users_place_of_birth, users.current_address AS users_current_address, users.permanent_address AS users_permanent_address, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.created_by AS users_created_by, users.updated_by AS users_updated_by, users.is_deleted AS users_is_deleted, users.deleted_at AS users_deleted_at, users.deleted_by AS users_deleted_by, users.version AS users_version, users.is_active AS users_is_active, users.email_verified AS users_email_verified, users.mobile_verified AS users_mobile_verified, users.last_login_at AS users_last_login_at 
+FROM users 
+WHERE users.is_deleted = false ORDER BY users.created_at DESC 
+ LIMIT %(param_1)s, %(param_2)s
+2025-12-18 10:26:12,784 - sqlalchemy.engine.Engine - INFO - [cached since 173.1s ago] {'param_1': 0, 'param_2': 10}
+2025-12-18 10:26:12,792 - app.services.user_service - INFO - Fetched 2 users (total: 2)
+2025-12-18 10:26:12,794 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-12-18 10:29:48,658 - sqlalchemy.engine.Engine - INFO - SELECT DATABASE()
+2025-12-18 10:29:48,658 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-12-18 10:29:48,663 - sqlalchemy.engine.Engine - INFO - SELECT @@sql_mode
+2025-12-18 10:29:48,663 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-12-18 10:29:48,663 - sqlalchemy.engine.Engine - INFO - SELECT @@lower_case_table_names
+2025-12-18 10:29:48,663 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-12-18 10:29:48,663 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-12-18 10:29:48,663 - sqlalchemy.engine.Engine - INFO - DESCRIBE `user_management`.`users`
+2025-12-18 10:29:48,663 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-12-18 10:29:48,674 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-12-18 10:29:48,676 - app.main - INFO - Database tables created successfully
+2025-12-18 10:29:48,694 - app.main - INFO - Application started with rate limiting enabled

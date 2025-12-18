@@ -26,12 +26,10 @@ logger = logging.getLogger(__name__)
 
 settings = get_settings()
 
-try:
-    Base.metadata.create_all(bind=engine)
-    logger.info("Database tables created successfully")
-except Exception as e:
-    logger.error(f"Failed to create database tables: {e}")
-    raise
+# Database migrations handled by Alembic
+# Run: alembic upgrade head
+logger.info("Using Alembic for database migrations")
+
 limiter = Limiter(key_func=get_remote_address, default_limits=["100/minute"])
 
 app = FastAPI(

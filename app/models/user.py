@@ -30,6 +30,11 @@ class User(Base):
     mobile_verified = Column(Boolean, default=False, nullable=False)
     last_login_at = Column(DateTime(timezone=True), nullable=True)
     
+    # New fields for testing Alembic
+    profile_picture = Column(String(500), nullable=True, comment="URL to profile picture")
+    bio = Column(Text, nullable=True, comment="User bio/description")
+    preferred_language = Column(String(10), default='en', nullable=False, comment="Language preference (en, hi, etc)")
+    
     __table_args__ = (
         Index('idx_active_email', 'is_deleted', 'email'),
         Index('idx_active_mobile', 'is_deleted', 'primary_mobile'),
