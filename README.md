@@ -6,7 +6,6 @@
 ![Python](https://img.shields.io/badge/python-3.12+-blue.svg?style=for-the-badge&logo=python&logoColor=white)
 ![MySQL](https://img.shields.io/badge/mysql-8.0-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
 ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-2.0-red.svg?style=for-the-badge&logo=sqlalchemy)
-![License](https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge)
 
 **A production-grade RESTful API for comprehensive user data management with enterprise-level features**
 
@@ -1033,52 +1032,9 @@ We welcome contributions! Please follow these guidelines:
 
 **Types:** feat, fix, docs, style, refactor, test, chore
 
-**Example:**
-```
-feat(users): add email verification endpoint
-
-- Add new endpoint POST /users/{id}/verify-email
-- Send verification email with token
-- Update user schema with email_verified field
-
-Closes #123
-```
 
 ---
 
-## License
-
-MIT License
-
-Copyright (c) 2025 [Your Name]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
----
-
-## Support & Contact
-
-- **Issues:** [GitHub Issues](https://github.com/yourusername/user-management-system/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/yourusername/user-management-system/discussions)
-- **Email:** your.email@example.com
-
----
 
 ## Acknowledgments
 
@@ -1093,8 +1049,5 @@ SOFTWARE.
 
 **Built with Python, FastAPI, and MySQL**
 
-[Documentation](https://github.com/yourusername/user-management-system/wiki) • 
-[Report Bug](https://github.com/yourusername/user-management-system/issues) • 
-[Request Feature](https://github.com/yourusername/user-management-system/issues)
 
 </div>
